@@ -46,6 +46,7 @@ save_box = new Layer
 	height: 120
 	opacity: 1
 	image: "images/opasicy.png"
+	###
 save_box.draggable.enabled = true
 save_box.draggable.vertical = false
 save_box.draggable.constraints =
@@ -53,7 +54,7 @@ save_box.draggable.constraints =
  y: 372
  width: 936
  height: 120
-
+###
 save_box.states.stateOpen =
 	x: 216
  animationOptions:
@@ -352,5 +353,4 @@ layer54.onClick ->
 
 layer_test.onClick ->
 	save_box.stateCycle("stateClose", "stateOpen")
-
 	M_button.opacity = 1
