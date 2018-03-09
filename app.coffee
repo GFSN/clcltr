@@ -304,6 +304,7 @@ layer12.onClick ->
 	textLayer2.input.value = Math.floor(Math.random() * (2511 - (0)))
 layer13.onClick ->
 	textLayer.input.value = null
+	textLayer2.input.value = null
 layer21.onClick ->
 	textLayer.input.value = textLayer.input.value + "7"
 	textLayer2.input.value = Math.floor(Math.random() * (2511 - (0)))

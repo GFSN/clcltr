@@ -360,7 +360,8 @@ layer12.onClick(function() {
 });
 
 layer13.onClick(function() {
-  return textLayer.input.value = null;
+  textLayer.input.value = null;
+  return textLayer2.input.value = null;
 });
 
 layer21.onClick(function() {
