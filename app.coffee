@@ -39,8 +39,25 @@ textLayer.input.style.border = "0px solid"
 #textLayer.input.placeholder = "Search Me"
 textLayer.backgroundColor = "rgba(255, 255, 255, 0)"
 
+textLayer2 = new InputTextLayer width:Screen.width , height:120, y:372, x:4
+textLayer2.states.animationOptions = curve: "spring(250, 20, 0)"
+
+textLayer2.input.style.font = "65px/1.35em Helvetica"
+textLayer2.input.style.font-style = "normal"
+textLayer2.input.style.font-weight = "100"
+textLayer2.input.style.padding = "24px"
+textLayer2.input.style.textAlign = "right"
+textLayer2.input.style.background = "transparent"
+textLayer2.input.style.outline = '0'
+textLayer2.input.style.color = "#fff"
+textLayer2.input.style.border = "0px solid"
+#textLayer2.input.style.display = "sgsf"
+#textLayer2.input.value =
+#textLayer2.input.placeholder = "Search Me"
+textLayer2.backgroundColor = "rgba(255, 0, 0, 0)"
+
 backgroundLayer = new Layer
-  image: "images/bg.png"
+  image: "images/main_screen_v1.3.1@2x.png"
   width: 720
   height: 1280
 
@@ -224,37 +241,55 @@ layer54 = new Layer
 
 layer11.onClick ->
 	textLayer.input.value = textLayer.input.value + "√("
+	textLayer2.input.value = Math.floor(Math.random() * (2511 - (0)))
 layer12.onClick ->
 	textLayer.input.value = textLayer.input.value + "^2"
+	textLayer2.input.value = Math.floor(Math.random() * (2511 - (0)))
 layer21.onClick ->
 	textLayer.input.value = textLayer.input.value + "7"
+	textLayer2.input.value = Math.floor(Math.random() * (2511 - (0)))
 layer22.onClick ->
 	textLayer.input.value = textLayer.input.value + "8"
+	textLayer2.input.value = Math.floor(Math.random() * (2511 - (0)))
 layer23.onClick ->
 	textLayer.input.value = textLayer.input.value + "9"
+	textLayer2.input.value = Math.floor(Math.random() * (2511 - (0)))
 layer24.onClick ->
 	textLayer.input.value = textLayer.input.value + "÷"
+	textLayer2.input.value = Math.floor(Math.random() * (2511 - (0)))
 layer31.onClick ->
 	textLayer.input.value = textLayer.input.value + "4"
+	textLayer2.input.value = Math.floor(Math.random() * (2511 - (0)))
 layer32.onClick ->
 	textLayer.input.value = textLayer.input.value + "5"
+	textLayer2.input.value = Math.floor(Math.random() * (2511 - (0)))
 layer33.onClick ->
 	textLayer.input.value = textLayer.input.value + "6"
+	textLayer2.input.value = Math.floor(Math.random() * (2511 - (0)))
 layer34.onClick ->
 	textLayer.input.value = textLayer.input.value + "×"
+	textLayer2.input.value = Math.floor(Math.random() * (2511 - (0)))
 layer41.onClick ->
 	textLayer.input.value = textLayer.input.value + "1"
+	textLayer2.input.value = Math.floor(Math.random() * (2511 - (0)))
 layer42.onClick ->
 	textLayer.input.value = textLayer.input.value + "2"
+	textLayer2.input.value = Math.floor(Math.random() * (2511 - (0)))
 layer43.onClick ->
 	textLayer.input.value = textLayer.input.value + "3"
+	textLayer2.input.value = Math.floor(Math.random() * (2511 - (0)))
 layer44.onClick ->
 	textLayer.input.value = textLayer.input.value + "-"
+	textLayer2.input.value = Math.floor(Math.random() * (2511 - (0)))
 layer51.onClick ->
 	textLayer.input.value = textLayer.input.value + "0"
+	textLayer2.input.value = Math.floor(Math.random() * (2511 - (0)))
 layer52.onClick ->
 	textLayer.input.value = textLayer.input.value + "."
+	textLayer2.input.value = Math.floor(Math.random() * (2511 - (0)))
 layer53.onClick ->
 	textLayer.input.value = textLayer.input.value + ")"
+	textLayer2.input.value = Math.floor(Math.random() * (2511 - (0)))
 layer54.onClick ->
 	textLayer.input.value = textLayer.input.value + "+"
+	textLayer2.input.value = Math.floor(Math.random() * (2511 - (0)))

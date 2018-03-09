@@ -1,4 +1,4 @@
-var InputTextLayer, backgroundLayer, layer11, layer12, layer13, layer14, layer21, layer22, layer23, layer24, layer31, layer32, layer33, layer34, layer41, layer42, layer43, layer44, layer51, layer52, layer53, layer54, ov, style, textLayer, weight,
+var InputTextLayer, backgroundLayer, layer11, layer12, layer13, layer14, layer21, layer22, layer23, layer24, layer31, layer32, layer33, layer34, layer41, layer42, layer43, layer44, layer51, layer52, layer53, layer54, ov, style, textLayer, textLayer2, weight,
   bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
   extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
   hasProp = {}.hasOwnProperty;
@@ -64,8 +64,39 @@ textLayer.input.style.border = "0px solid";
 
 textLayer.backgroundColor = "rgba(255, 255, 255, 0)";
 
+textLayer2 = new InputTextLayer({
+  width: Screen.width,
+  height: 120,
+  y: 372,
+  x: 4
+});
+
+textLayer2.states.animationOptions = {
+  curve: "spring(250, 20, 0)"
+};
+
+textLayer2.input.style.font = "65px/1.35em Helvetica";
+
+textLayer2.input.style.font - (style = "normal");
+
+textLayer2.input.style.font - (weight = "100");
+
+textLayer2.input.style.padding = "24px";
+
+textLayer2.input.style.textAlign = "right";
+
+textLayer2.input.style.background = "transparent";
+
+textLayer2.input.style.outline = '0';
+
+textLayer2.input.style.color = "#fff";
+
+textLayer2.input.style.border = "0px solid";
+
+textLayer2.backgroundColor = "rgba(255, 0, 0, 0)";
+
 backgroundLayer = new Layer({
-  image: "images/bg.png",
+  image: "images/main_screen_v1.3.1@2x.png",
   width: 720,
   height: 1280
 });
@@ -251,73 +282,91 @@ layer54 = new Layer({
 });
 
 layer11.onClick(function() {
-  return textLayer.input.value = textLayer.input.value + "√(";
+  textLayer.input.value = textLayer.input.value + "√(";
+  return textLayer2.input.value = Math.floor(Math.random() * (2511 - 0));
 });
 
 layer12.onClick(function() {
-  return textLayer.input.value = textLayer.input.value + "^2";
+  textLayer.input.value = textLayer.input.value + "^2";
+  return textLayer2.input.value = Math.floor(Math.random() * (2511 - 0));
 });
 
 layer21.onClick(function() {
-  return textLayer.input.value = textLayer.input.value + "7";
+  textLayer.input.value = textLayer.input.value + "7";
+  return textLayer2.input.value = Math.floor(Math.random() * (2511 - 0));
 });
 
 layer22.onClick(function() {
-  return textLayer.input.value = textLayer.input.value + "8";
+  textLayer.input.value = textLayer.input.value + "8";
+  return textLayer2.input.value = Math.floor(Math.random() * (2511 - 0));
 });
 
 layer23.onClick(function() {
-  return textLayer.input.value = textLayer.input.value + "9";
+  textLayer.input.value = textLayer.input.value + "9";
+  return textLayer2.input.value = Math.floor(Math.random() * (2511 - 0));
 });
 
 layer24.onClick(function() {
-  return textLayer.input.value = textLayer.input.value + "÷";
+  textLayer.input.value = textLayer.input.value + "÷";
+  return textLayer2.input.value = Math.floor(Math.random() * (2511 - 0));
 });
 
 layer31.onClick(function() {
-  return textLayer.input.value = textLayer.input.value + "4";
+  textLayer.input.value = textLayer.input.value + "4";
+  return textLayer2.input.value = Math.floor(Math.random() * (2511 - 0));
 });
 
 layer32.onClick(function() {
-  return textLayer.input.value = textLayer.input.value + "5";
+  textLayer.input.value = textLayer.input.value + "5";
+  return textLayer2.input.value = Math.floor(Math.random() * (2511 - 0));
 });
 
 layer33.onClick(function() {
-  return textLayer.input.value = textLayer.input.value + "6";
+  textLayer.input.value = textLayer.input.value + "6";
+  return textLayer2.input.value = Math.floor(Math.random() * (2511 - 0));
 });
 
 layer34.onClick(function() {
-  return textLayer.input.value = textLayer.input.value + "×";
+  textLayer.input.value = textLayer.input.value + "×";
+  return textLayer2.input.value = Math.floor(Math.random() * (2511 - 0));
 });
 
 layer41.onClick(function() {
-  return textLayer.input.value = textLayer.input.value + "1";
+  textLayer.input.value = textLayer.input.value + "1";
+  return textLayer2.input.value = Math.floor(Math.random() * (2511 - 0));
 });
 
 layer42.onClick(function() {
-  return textLayer.input.value = textLayer.input.value + "2";
+  textLayer.input.value = textLayer.input.value + "2";
+  return textLayer2.input.value = Math.floor(Math.random() * (2511 - 0));
 });
 
 layer43.onClick(function() {
-  return textLayer.input.value = textLayer.input.value + "3";
+  textLayer.input.value = textLayer.input.value + "3";
+  return textLayer2.input.value = Math.floor(Math.random() * (2511 - 0));
 });
 
 layer44.onClick(function() {
-  return textLayer.input.value = textLayer.input.value + "-";
+  textLayer.input.value = textLayer.input.value + "-";
+  return textLayer2.input.value = Math.floor(Math.random() * (2511 - 0));
 });
 
 layer51.onClick(function() {
-  return textLayer.input.value = textLayer.input.value + "0";
+  textLayer.input.value = textLayer.input.value + "0";
+  return textLayer2.input.value = Math.floor(Math.random() * (2511 - 0));
 });
 
 layer52.onClick(function() {
-  return textLayer.input.value = textLayer.input.value + ".";
+  textLayer.input.value = textLayer.input.value + ".";
+  return textLayer2.input.value = Math.floor(Math.random() * (2511 - 0));
 });
 
 layer53.onClick(function() {
-  return textLayer.input.value = textLayer.input.value + ")";
+  textLayer.input.value = textLayer.input.value + ")";
+  return textLayer2.input.value = Math.floor(Math.random() * (2511 - 0));
 });
 
 layer54.onClick(function() {
-  return textLayer.input.value = textLayer.input.value + "+";
+  textLayer.input.value = textLayer.input.value + "+";
+  return textLayer2.input.value = Math.floor(Math.random() * (2511 - 0));
 });
