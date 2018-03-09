@@ -115,7 +115,7 @@ layer_test = new Layer
 	y: 0
 	width: 150
 	height: 120
-	opacity: 1
+	opacity: 0
 	parent: save_box
 
 backgroundLayer.sendToBack()
