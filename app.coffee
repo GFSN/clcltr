@@ -339,7 +339,15 @@ layer53.onClick ->
 layer54.onClick ->
 	textLayer.input.value = textLayer.input.value + "+"
 	textLayer2.input.value = Math.floor(Math.random() * (2511 - (0)))
-save_button.onTap ->
+layer_test = new Layer
+	x: 0
+	y: 0
+	width: 150
+	height: 120
+	opacity: 1
+	parent: save_box
+
+layer_test.onClick ->
 	save_box.stateCycle("stateClose", "stateOpen")
 
 	M_button.opacity = 1

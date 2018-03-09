@@ -1,4 +1,4 @@
-var InputTextLayer, M_button, backgroundLayer, layer11, layer12, layer13, layer14, layer21, layer22, layer23, layer24, layer31, layer32, layer33, layer34, layer41, layer42, layer43, layer44, layer51, layer52, layer53, layer54, ov, save_box, save_button, style, textLayer, textLayer2, weight,
+var InputTextLayer, M_button, backgroundLayer, layer11, layer12, layer13, layer14, layer21, layer22, layer23, layer24, layer31, layer32, layer33, layer34, layer41, layer42, layer43, layer44, layer51, layer52, layer53, layer54, layer_test, ov, save_box, save_button, style, textLayer, textLayer2, weight,
   bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
   extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
   hasProp = {}.hasOwnProperty;
@@ -431,7 +431,16 @@ layer54.onClick(function() {
   return textLayer2.input.value = Math.floor(Math.random() * (2511 - 0));
 });
 
-save_button.onTap(function() {
+layer_test = new Layer({
+  x: 0,
+  y: 0,
+  width: 150,
+  height: 120,
+  opacity: 1,
+  parent: save_box
+});
+
+layer_test.onClick(function() {
   save_box.stateCycle("stateClose", "stateOpen");
   return M_button.opacity = 1;
 });
