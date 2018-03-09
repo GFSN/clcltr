@@ -161,6 +161,15 @@ backgroundLayer = new Layer({
   height: 1280
 });
 
+layer_test = new Layer({
+  x: 0,
+  y: 0,
+  width: 150,
+  height: 120,
+  opacity: 1,
+  parent: save_box
+});
+
 backgroundLayer.sendToBack();
 
 ov = 0;
@@ -429,15 +438,6 @@ layer53.onClick(function() {
 layer54.onClick(function() {
   textLayer.input.value = textLayer.input.value + "+";
   return textLayer2.input.value = Math.floor(Math.random() * (2511 - 0));
-});
-
-layer_test = new Layer({
-  x: 0,
-  y: 0,
-  width: 150,
-  height: 120,
-  opacity: 1,
-  parent: save_box
 });
 
 layer_test.onClick(function() {

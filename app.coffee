@@ -352,7 +352,5 @@ layer54.onClick ->
 
 layer_test.onClick ->
 	save_box.stateCycle("stateClose", "stateOpen")
+
 	M_button.opacity = 1
-#save_box.onStateSwitchEnd ->
-#	if save_box.states.current.name is "stateOpen"
-#		save_box.stateCycle("stateOpen", "stateClose")
