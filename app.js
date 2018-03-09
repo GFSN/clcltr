@@ -1,4 +1,4 @@
-var InputTextLayer, backgroundLayer, layer11, layer12, layer13, layer14, layer21, layer22, layer23, layer24, layer31, layer32, layer33, layer34, layer41, layer42, layer43, layer44, layer51, layer52, layer53, layer54, ov, style, textLayer, textLayer2, weight,
+var InputTextLayer, M_button, backgroundLayer, layer11, layer12, layer13, layer14, layer21, layer22, layer23, layer24, layer31, layer32, layer33, layer34, layer41, layer42, layer43, layer44, layer51, layer52, layer53, layer54, ov, save_box, save_button, style, textLayer, textLayer2, weight,
   bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
   extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
   hasProp = {}.hasOwnProperty;
@@ -64,10 +64,48 @@ textLayer.input.style.border = "0px solid";
 
 textLayer.backgroundColor = "rgba(255, 255, 255, 0)";
 
+save_box = new Layer({
+  x: 0,
+  y: 372,
+  width: 720,
+  height: 120,
+  opacity: 1,
+  image: "images/opasicy.png"
+});
+
+save_box.draggable.enabled = true;
+
+save_box.draggable.vertical = false;
+
+save_box.draggable.constraints = {
+  x: 4,
+  y: 372,
+  width: 936,
+  height: 120
+};
+
+save_box.states.stateOpen = {
+  x: 216,
+  animationOptions: {
+    time: 0.4,
+    curve: "Bezier(0.0, 0.0, 0.2, 1)"
+  }
+};
+
+save_box.states.stateClose = {
+  x: 4,
+  animationOptions: {
+    time: 0.3,
+    curve: "Bezier(0.0, 0.0, 0.2, 1)"
+  }
+};
+
+save_box.stateSwitch("stateClose");
+
 textLayer2 = new InputTextLayer({
   width: Screen.width,
   height: 120,
-  y: 372,
+  y: 0,
   x: 4
 });
 
@@ -95,8 +133,30 @@ textLayer2.input.style.border = "0px solid";
 
 textLayer2.backgroundColor = "rgba(255, 0, 0, 0)";
 
+textLayer2.parent = save_box;
+
+save_button = new Layer({
+  x: 14,
+  y: 30,
+  width: 250,
+  height: 61,
+  opacity: 1,
+  image: "images/save_button.png",
+  parent: save_box
+});
+
+M_button = new Layer({
+  x: -216,
+  y: 30,
+  width: 250,
+  height: 61,
+  opacity: 0,
+  image: "images/M+_button.png",
+  parent: save_box
+});
+
 backgroundLayer = new Layer({
-  image: "images/main_screen_v1.3.1@2x.png",
+  image: "images/bg.png",
   width: 720,
   height: 1280
 });
@@ -369,4 +429,15 @@ layer53.onClick(function() {
 layer54.onClick(function() {
   textLayer.input.value = textLayer.input.value + "+";
   return textLayer2.input.value = Math.floor(Math.random() * (2511 - 0));
+});
+
+save_button.onClick(function() {
+  save_box.animate("stateOpen");
+  return M_button.opacity = 1;
+});
+
+save_box.onStateSwitchEnd(function() {
+  if (save_box.states.current.name === "stateOpen") {
+    return save_box.stateCycle("stateOpen", "stateClose");
+  }
 });
