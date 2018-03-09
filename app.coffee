@@ -340,7 +340,7 @@ layer54.onClick ->
 	textLayer.input.value = textLayer.input.value + "+"
 	textLayer2.input.value = Math.floor(Math.random() * (2511 - (0)))
 save_button.onClick ->
-	save_box.animate("stateOpen")
+	save_box.stateCycle("stateClose", "stateOpen")
 	M_button.opacity = 1
 save_box.onStateSwitchEnd ->
 	if save_box.states.current.name is "stateOpen"
