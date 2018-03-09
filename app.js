@@ -359,6 +359,10 @@ layer12.onClick(function() {
   return textLayer2.input.value = Math.floor(Math.random() * (2511 - 0));
 });
 
+layer13.onClick(function() {
+  return textLayer.input.value = null;
+});
+
 layer21.onClick(function() {
   textLayer.input.value = textLayer.input.value + "7";
   return textLayer2.input.value = Math.floor(Math.random() * (2511 - 0));
@@ -442,4 +446,10 @@ layer54.onClick(function() {
 layer_test.onClick(function() {
   save_box.stateCycle("stateClose", "stateOpen");
   return M_button.opacity = 1;
+});
+
+save_box.onStateSwitchEnd(function() {
+  if (save_box.states.current.name === "stateOpen") {
+    return save_box.stateCycle("stateClose", "stateOpen");
+  }
 });

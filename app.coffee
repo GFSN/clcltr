@@ -302,6 +302,8 @@ layer11.onClick ->
 layer12.onClick ->
 	textLayer.input.value = textLayer.input.value + "^2"
 	textLayer2.input.value = Math.floor(Math.random() * (2511 - (0)))
+layer13.onClick ->
+	textLayer.input.value = null
 layer21.onClick ->
 	textLayer.input.value = textLayer.input.value + "7"
 	textLayer2.input.value = Math.floor(Math.random() * (2511 - (0)))
@@ -354,3 +356,6 @@ layer54.onClick ->
 layer_test.onClick ->
 	save_box.stateCycle("stateClose", "stateOpen")
 	M_button.opacity = 1
+save_box.onStateSwitchEnd ->
+	if save_box.states.current.name is "stateOpen"
+		save_box.stateCycle("stateClose", "stateOpen")
