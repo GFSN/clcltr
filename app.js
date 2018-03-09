@@ -104,7 +104,7 @@ save_box.stateSwitch("stateClose");
 textLayer2 = new InputTextLayer({
   width: Screen.width,
   height: 120,
-  y: 0,
+  y: 372,
   x: 4
 });
 
@@ -131,8 +131,6 @@ textLayer2.input.style.color = "#fff";
 textLayer2.input.style.border = "0px solid";
 
 textLayer2.backgroundColor = "rgba(255, 0, 0, 0)";
-
-textLayer2.parent = save_box;
 
 save_button = new Layer({
   x: 14,
@@ -443,6 +441,8 @@ layer54.onClick(function() {
   textLayer.input.value = textLayer.input.value + "+";
   return textLayer2.input.value = Math.floor(Math.random() * (2511 - 0));
 });
+
+textLayer2.placeBefore(layer_test);
 
 layer_test.onClick(function() {
   save_box.stateCycle("stateClose", "stateOpen");

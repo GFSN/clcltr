@@ -69,7 +69,7 @@ save_box.stateSwitch("stateClose")
 
 
 
-textLayer2 = new InputTextLayer width:Screen.width , height:120, y:0, x:4
+textLayer2 = new InputTextLayer width:Screen.width , height:120, y:372, x:4
 textLayer2.states.animationOptions = curve: "spring(250, 20, 0)"
 
 textLayer2.input.style.font = "65px/1.35em Helvetica"
@@ -85,7 +85,7 @@ textLayer2.input.style.border = "0px solid"
 #textLayer2.input.value = 31561616541653
 #textLayer2.input.placeholder = "Search Me"
 textLayer2.backgroundColor = "rgba(255, 0, 0, 0)"
-textLayer2.parent = save_box
+#textLayer2.parent = save_box
 
 save_button = new Layer
 	x: 14
@@ -353,7 +353,7 @@ layer53.onClick ->
 layer54.onClick ->
 	textLayer.input.value = textLayer.input.value + "+"
 	textLayer2.input.value = Math.floor(Math.random() * (2511 - (0)))
-
+textLayer2.placeBefore(layer_test)
 layer_test.onClick ->
 	save_box.stateCycle("stateClose", "stateOpen")
 	M_button.opacity = 1
