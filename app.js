@@ -431,13 +431,7 @@ layer54.onClick(function() {
   return textLayer2.input.value = Math.floor(Math.random() * (2511 - 0));
 });
 
-save_button.onClick(function() {
-  save_box.animate("stateOpen");
+save_button.onTap(function() {
+  save_box.stateCycle("stateClose", "stateOpen");
   return M_button.opacity = 1;
-});
-
-save_box.onStateSwitchEnd(function() {
-  if (save_box.states.current.name === "stateOpen") {
-    return save_box.stateCycle("stateOpen", "stateClose");
-  }
 });
